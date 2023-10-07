@@ -1,13 +1,13 @@
 import { Sequelize } from "sequelize";
-import connection from "../database/database";
+import { connection } from "../database/database.js";
 
 export const Category = connection.define("categories", {
   title: {
     type: Sequelize.STRING,
-    alowNull: false,
+    allowNull: false,
   },
   slug: {
     type: Sequelize.STRING,
-    alowNull: false,
+    allowNull: false,
   },
 });

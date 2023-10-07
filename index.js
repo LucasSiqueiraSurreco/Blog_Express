@@ -1,8 +1,13 @@
 import express from "express";
-import bodyParser from "body-parser";
 import { connection } from "./database/database.js";
+
+import bodyParser from "body-parser";
+
 import { router as categoriesController } from "./categories/CategoriesController.js";
 import { router as articlesController } from "./articles/ArticlesController.js";
+
+import { Article } from "./articles/Article.js";
+//import { Category } from "./articles/Category.js";
 
 const app = express();
 
