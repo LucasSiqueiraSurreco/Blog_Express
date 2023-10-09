@@ -17,5 +17,7 @@ export const Article = connection.define("articles", {
   },
 });
 
+Article.sync({ force: false });
+
 Category.hasMany(Article);
 Article.belongsTo(Category);

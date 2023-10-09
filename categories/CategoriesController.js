@@ -8,6 +8,14 @@ router.get("/admin/categories/new", (req, res) => {
   res.render("admin/categories/new");
 });
 
+router.get("/admin/categories", (req, res) => {
+  Category.findAll().then((categories) => {
+    res.render("admin/categories/index", {
+      categories: categories,
+    });
+  });
+});
+
 router.post("/categories/save", (req, res) => {
   let { title } = req.body;
   if (title != undefined) {

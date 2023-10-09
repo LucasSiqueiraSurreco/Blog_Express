@@ -11,3 +11,5 @@ export const Category = connection.define("categories", {
     allowNull: false,
   },
 });
+
+Category.sync({ force: false });
