@@ -62,3 +62,16 @@ router.post("/categories/delete", (req, res) => {
     redirect("/admin/categories");
   }
 });
+
+router.post("/categories/update", (req, res) => {
+  let { id, title } = req.body;
+
+  Category.update(
+    { title: title },
+    {
+      where: {
+        id: id,
+      },
+    }
+  ).then(() => redirect("/admin/categories"));
+});

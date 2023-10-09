@@ -8,7 +8,7 @@
       <h2>Edição de categoria</h2>
     </div>
     <div class="card-body">
-      <form method="post" action="/categories/save">
+      <form method="post" action="/categories/update">
         <input
           class="form-control"
           type="text"
@@ -17,6 +17,7 @@
           value="<%= categories.title  %>"
         />
         <br />
+        <input type="hidden" name="id" value="<%= categories.id  %>" />
         <button class="btn btn-success">Atualizar</button>
       </form>
     </div>
