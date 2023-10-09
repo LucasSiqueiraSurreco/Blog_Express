@@ -27,3 +27,20 @@ router.post("/categories/save", (req, res) => {
     res.redirect("/admin/categories/new");
   }
 });
+
+router.post("/categories/delete", (req, res) => {
+  let { id } = req.body;
+  if (id != undefined) {
+    if (!isNaN(id)) {
+      Category.destroy({
+        where: { id: id },
+      }).then(() => {
+        res.redirect("/admin/categories");
+      });
+    } else {
+      res.redirect("/admin/categories");
+    }
+  } else {
+    redirect("/admin/categories");
+  }
+});
