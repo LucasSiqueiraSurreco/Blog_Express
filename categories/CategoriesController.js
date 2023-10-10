@@ -67,11 +67,11 @@ router.post("/categories/update", (req, res) => {
   let { id, title } = req.body;
 
   Category.update(
-    { title: title },
+    { title: title, slug: slugify(title) },
     {
       where: {
         id: id,
       },
     }
-  ).then(() => redirect("/admin/categories"));
+  ).then(() => res.redirect("/admin/categories"));
 });
