@@ -22,6 +22,12 @@
           name="body"
           id="article"
         ></textarea>
+        <label>Categoria</label>
+        <select name="category" class="form-control">
+          <% categories.forEach((category)=>{ %>
+          <option value="<%=category.id  %>"><%= category.title %></option>
+          <% }) %>
+        </select>
         <br />
         <button class="btn btn-success">Cadastrar</button>
       </form>
