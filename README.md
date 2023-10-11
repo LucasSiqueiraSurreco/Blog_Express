@@ -1,1 +1,1 @@
-# Blog
+# Blog with admin route
