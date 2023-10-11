@@ -73,5 +73,7 @@ router.post("/categories/update", (req, res) => {
         id: id,
       },
     }
-  ).then(() => res.redirect("/admin/categories"));
+  ).then(() => {
+    res.redirect("/admin/categories");
+  });
 });

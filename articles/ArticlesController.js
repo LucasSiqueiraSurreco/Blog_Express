@@ -4,8 +4,12 @@ import { Category } from "../categories/Category.js";
 import { Article } from "./Article.js";
 import slugify from "slugify";
 
-router.get("/articles", (req, res) => {
-  res.send("Articles route");
+router.get("/admin/articles", (req, res) => {
+  Article.findAll({
+    include: [{ model: Category }],
+  }).then((articles) => {
+    res.render("admin/articles/index", { articles: articles });
+  });
 });
 
 router.get("/admin/articles/new", (req, res) => {
@@ -22,5 +26,7 @@ router.post("/articles/save", (req, res) => {
     slug: slugify(title),
     body: body,
     categoryId: category,
+  }).then(() => {
+    res.redirect("/admin/articles");
   });
 });
