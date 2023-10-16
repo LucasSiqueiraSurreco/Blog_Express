@@ -1,6 +1,6 @@
 # Blog with admin route
 
-## Dependências
+## Dependencies
 - **body-parser**
 - **dotenv**
 - **ejs**
